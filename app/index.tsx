@@ -13,12 +13,13 @@ const tu_puta_madre = require('../assets/images/ruth.png');
 export default function Index() {
   return (
     <View style={style.General}>
-      <Text style={style.Letras}> Hola papus,se como poner botones</Text>
+       <Image source={tu_puta_madre}/>
+      <Text style={style.Letras}> Hola pa,se como poner botones</Text>
       <Button title="POPO"  onPress={() => { Alert.alert('Se te esta saliendo el gas');
       }} >  
       </Button>
       <Link   href={"/HUH"}>HUH</Link>
-      <Image source={tu_puta_madre}/>
+      
       
       
     </View>
@@ -41,6 +42,9 @@ const style= StyleSheet.create({
     fontSize:15,
     fontStyle:"italic",
     color:"blue",
+  },
+  Imagen:{
+    
   }
   
 
