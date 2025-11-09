@@ -2,27 +2,40 @@
 import { Link } from "expo-router";
 import {
   Alert,
-  Button, Image, StyleSheet,
-
-  Text, View
+  Button, Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 const tu_puta_madre = require('../assets/images/ruth.png');
 
 
+
 export default function Index() {
   return (
-    <View style={style.General}>
-       <Image source={tu_puta_madre}/>
+    
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <View style={style.General}>
+       <TouchableOpacity activeOpacity={0.6} onPress={() =>{}}>
+        <Image  source={tu_puta_madre} style={style.Imagen}/> 
+       </TouchableOpacity>
+        
+       <Text style={style.ImagenTEXY}>Chimalliguita</Text>
       <Text style={style.Letras}> Hola pa,se como poner botones</Text>
       <Button title="POPO"  onPress={() => { Alert.alert('Se te esta saliendo el gas');
       }} >  
-      </Button>
-      <Link   href={"/HUH"}>HUH</Link>
-      
-      
-      
+      </Button>           
+      <Link   href={"/HUH"}>HUH</Link>          
     </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
+
+    
+    
   );
 }
 
@@ -44,10 +57,26 @@ const style= StyleSheet.create({
     color:"blue",
   },
   Imagen:{
+    resizeMode: "cover",
+    width: 50,
+    height: 50,
+    top: -280,
+    right: 70,
     
+  },
+  ImagenTEXY:{
+   fontSize: 20,
+    top: -310,
+    right: -25,
+    fontStyle:"italic",
+
+
   }
   
 
 
 })
+
+
+
 
