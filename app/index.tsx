@@ -1,5 +1,5 @@
-
 import { Link } from "expo-router";
+import  React, {useState} from 'react';
 import {
   Alert,
   Button, Image,
@@ -7,13 +7,14 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Modal,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 const tu_puta_madre = require('../assets/images/ruth.png');
 
 
-
+const [ ModalVisible, setModalVisible] = useState(false);
 export default function Index() {
   return (
     
